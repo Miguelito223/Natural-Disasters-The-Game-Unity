@@ -1,0 +1,33 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.PushNotifications
+{
+    [System.Obsolete(@"This interface should not be used. It will be deleted in the future version. Notification events are recorded for you automatically.")] public interface IPushNotificationsAnalytics
+    {
+        public void RecordNotificationOpened(System.Collections.Generic.Dictionary<string, object> payload, bool didLaunch);
+        public void RecordPushTokenUpdated(string pushToken);
+    }
+
+    public interface IPushNotificationsService
+    {
+        public event System.Action<System.Collections.Generic.Dictionary<string, object>> OnRemoteNotificationReceived;
+        [System.Obsolete(@"Do not use this. It will be removed in a future version. Events are recorded for you automatically.")] public IPushNotificationsAnalytics Analytics { get; }
+        public System.Threading.Tasks.Task<string> RegisterForPushNotificationsAsync();
+    }
+
+    public class PushNotificationSettings : UnityEngine.ScriptableObject
+    {
+        [UnityEngine.Serialization.FormerlySerializedAs(@"androidApplicationId")] public string firebaseAppID;
+        [UnityEngine.Serialization.FormerlySerializedAs(@"androidProjectId")] public string firebaseProjectID;
+        [UnityEngine.Serialization.FormerlySerializedAs(@"androidSenderId")] public string firebaseProjectNumber;
+        [UnityEngine.Header(@"Android (Firebase) Settings")] [UnityEngine.Serialization.FormerlySerializedAs(@"androidApiKey")] public string firebaseWebApiKey;
+        public PushNotificationSettings() {}
+        public static PushNotificationSettings GetAssetInstance();
+    }
+
+    public static class PushNotificationsService
+    {
+        public static IPushNotificationsService Instance { get; }
+    }
+}
