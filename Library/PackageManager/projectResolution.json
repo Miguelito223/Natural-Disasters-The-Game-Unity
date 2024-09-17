@@ -1,0 +1,519 @@
+{
+  "context": {
+    "projectPath": "D:/miguel/Documents/Godot-unity/Natural-Disasters-The-Game-Unity/Packages",
+    "unityVersion": "6000.0.18f1"
+  },
+  "inputs": [
+    "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Packages\\manifest.json",
+    "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Packages\\packages-lock.json"
+  ],
+  "outputs": {
+    "com.unity.2d.sprite@1.0.0": {
+      "name": "com.unity.2d.sprite",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.2d.sprite",
+      "fingerprint": "b0dd32b64256b7cc7ae5c0e91e62d40c380b6581",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.2d.tilemap@1.0.0": {
+      "name": "com.unity.2d.tilemap",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.2d.tilemap",
+      "fingerprint": "cf9771037a2571b3bca1d1d81e6b255605ad023d",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.ads@4.12.0": {
+      "name": "com.unity.ads",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.ads",
+      "fingerprint": "3bb3d269d51b1ced8f6f203c98bb025578933edd",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "4.12.0",
+      "source": "registry"
+    },
+    "com.unity.ai.navigation@2.0.4": {
+      "name": "com.unity.ai.navigation",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.ai.navigation",
+      "fingerprint": "3f89ad87253dcaae2d0bb583bd5ef4c4f2c17764",
+      "editorCompatibility": "2023.2.0a18",
+      "version": "2.0.4",
+      "source": "registry"
+    },
+    "com.unity.analytics@3.8.1": {
+      "name": "com.unity.analytics",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.analytics",
+      "fingerprint": "6cc66d58ac08950316d3b86a26c92187aca1ddb0",
+      "editorCompatibility": "2019.3.0a1",
+      "version": "3.8.1",
+      "source": "registry"
+    },
+    "com.unity.cinemachine@3.1.1": {
+      "name": "com.unity.cinemachine",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.cinemachine",
+      "fingerprint": "e1b69d1db7ff9c6109059ef21dd534e53cb2cc63",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "3.1.1",
+      "source": "registry"
+    },
+    "com.unity.collab-proxy@2.4.4": {
+      "name": "com.unity.collab-proxy",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.collab-proxy",
+      "fingerprint": "f073ab5b7d4916dd0953caa6b29a435a4e9a3df8",
+      "editorCompatibility": "2020.3.48f1",
+      "version": "2.4.4",
+      "source": "registry"
+    },
+    "com.unity.device-simulator.devices@1.0.0": {
+      "name": "com.unity.device-simulator.devices",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.device-simulator.devices",
+      "fingerprint": "ae8874e9c898e20961be6f426dfafaf49f604cda",
+      "editorCompatibility": "2022.1.0a1",
+      "version": "1.0.0",
+      "source": "registry"
+    },
+    "com.unity.feature.development@1.0.2": {
+      "name": "com.unity.feature.development",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.feature.development",
+      "fingerprint": "c770b6a36a30949b030c5ec02d835f771b975cbb",
+      "version": "1.0.2",
+      "source": "builtin"
+    },
+    "com.unity.ide.rider@3.0.31": {
+      "name": "com.unity.ide.rider",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.ide.rider",
+      "fingerprint": "7921be93db40ec070fcb01ed82d1c3df1bbdddcd",
+      "editorCompatibility": "2019.2.6f1",
+      "version": "3.0.31",
+      "source": "registry"
+    },
+    "com.unity.ide.visualstudio@2.0.22": {
+      "name": "com.unity.ide.visualstudio",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.ide.visualstudio",
+      "fingerprint": "8140e851d83e922ca2021b04a89519de94ebe38c",
+      "editorCompatibility": "2019.4.25f1",
+      "version": "2.0.22",
+      "source": "registry"
+    },
+    "com.unity.netcode.gameobjects@1.11.0": {
+      "name": "com.unity.netcode.gameobjects",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.netcode.gameobjects",
+      "fingerprint": "0fd5c8e23452ec479b1d44f8a1da0cdc7bd7b4b4",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "1.11.0",
+      "source": "registry"
+    },
+    "com.unity.purchasing@4.12.2": {
+      "name": "com.unity.purchasing",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.purchasing",
+      "fingerprint": "649c6c7b3b1b6277839041f4987c0a1e66176678",
+      "editorCompatibility": "2020.3.0a1",
+      "version": "4.12.2",
+      "source": "registry"
+    },
+    "com.unity.services.push-notifications@4.0.0-pre.1": {
+      "name": "com.unity.services.push-notifications",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.services.push-notifications",
+      "fingerprint": "a2b8aeaf7c01c86fef7de6e16825197223651af0",
+      "editorCompatibility": "2020.3.0a1",
+      "version": "4.0.0-pre.1",
+      "source": "registry"
+    },
+    "com.unity.test-framework@1.4.5": {
+      "name": "com.unity.test-framework",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.test-framework",
+      "fingerprint": "0a21eb82d95cd331643a1e0ce4e8e9a5f18954c8",
+      "editorCompatibility": "2019.4.0a10",
+      "version": "1.4.5",
+      "source": "registry"
+    },
+    "com.unity.timeline@1.8.7": {
+      "name": "com.unity.timeline",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.timeline",
+      "fingerprint": "c58b4ee65782ad38338e29f7ee67787cb6998f04",
+      "editorCompatibility": "2019.3.0a1",
+      "version": "1.8.7",
+      "source": "registry"
+    },
+    "com.unity.toolchain.win-x86_64-linux-x86_64@2.0.9": {
+      "name": "com.unity.toolchain.win-x86_64-linux-x86_64",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.toolchain.win-x86_64-linux-x86_64",
+      "fingerprint": "22f622e0821fc835034e57944ff152a3049178fe",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.0.9",
+      "source": "registry"
+    },
+    "com.unity.ugui@2.0.0": {
+      "name": "com.unity.ugui",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.ugui",
+      "fingerprint": "b0e0b1c828561e8a0d130fa0e71078e9684ef47f",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "2.0.0",
+      "source": "builtin"
+    },
+    "com.unity.visualscripting@1.9.4": {
+      "name": "com.unity.visualscripting",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.visualscripting",
+      "fingerprint": "0920df93f9574f857a55af27bd38fdd9230a3f51",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "1.9.4",
+      "source": "registry"
+    },
+    "com.unity.xr.legacyinputhelpers@2.1.10": {
+      "name": "com.unity.xr.legacyinputhelpers",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.xr.legacyinputhelpers",
+      "fingerprint": "4716850f3b0c9a398c68cd272d279e68245c49a7",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.1.10",
+      "source": "registry"
+    },
+    "com.unity.modules.accessibility@1.0.0": {
+      "name": "com.unity.modules.accessibility",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.accessibility",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.ai@1.0.0": {
+      "name": "com.unity.modules.ai",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.ai",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.androidjni@1.0.0": {
+      "name": "com.unity.modules.androidjni",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.androidjni",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.animation@1.0.0": {
+      "name": "com.unity.modules.animation",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.animation",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.assetbundle@1.0.0": {
+      "name": "com.unity.modules.assetbundle",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.assetbundle",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.audio@1.0.0": {
+      "name": "com.unity.modules.audio",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.audio",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.cloth@1.0.0": {
+      "name": "com.unity.modules.cloth",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.cloth",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.director@1.0.0": {
+      "name": "com.unity.modules.director",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.director",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.imageconversion@1.0.0": {
+      "name": "com.unity.modules.imageconversion",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.imageconversion",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.imgui@1.0.0": {
+      "name": "com.unity.modules.imgui",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.imgui",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.jsonserialize@1.0.0": {
+      "name": "com.unity.modules.jsonserialize",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.jsonserialize",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.particlesystem@1.0.0": {
+      "name": "com.unity.modules.particlesystem",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.particlesystem",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.physics@1.0.0": {
+      "name": "com.unity.modules.physics",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.physics",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.physics2d@1.0.0": {
+      "name": "com.unity.modules.physics2d",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.physics2d",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.screencapture@1.0.0": {
+      "name": "com.unity.modules.screencapture",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.screencapture",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.terrain@1.0.0": {
+      "name": "com.unity.modules.terrain",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.terrain",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.terrainphysics@1.0.0": {
+      "name": "com.unity.modules.terrainphysics",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.terrainphysics",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.tilemap@1.0.0": {
+      "name": "com.unity.modules.tilemap",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.tilemap",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.ui@1.0.0": {
+      "name": "com.unity.modules.ui",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.ui",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.uielements@1.0.0": {
+      "name": "com.unity.modules.uielements",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.uielements",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.umbra@1.0.0": {
+      "name": "com.unity.modules.umbra",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.umbra",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.unityanalytics@1.0.0": {
+      "name": "com.unity.modules.unityanalytics",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.unityanalytics",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.unitywebrequest@1.0.0": {
+      "name": "com.unity.modules.unitywebrequest",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.unitywebrequest",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.unitywebrequestassetbundle@1.0.0": {
+      "name": "com.unity.modules.unitywebrequestassetbundle",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.unitywebrequestassetbundle",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.unitywebrequestaudio@1.0.0": {
+      "name": "com.unity.modules.unitywebrequestaudio",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.unitywebrequestaudio",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.unitywebrequesttexture@1.0.0": {
+      "name": "com.unity.modules.unitywebrequesttexture",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.unitywebrequesttexture",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.unitywebrequestwww@1.0.0": {
+      "name": "com.unity.modules.unitywebrequestwww",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.unitywebrequestwww",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.vehicles@1.0.0": {
+      "name": "com.unity.modules.vehicles",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.vehicles",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.video@1.0.0": {
+      "name": "com.unity.modules.video",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.video",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.vr@1.0.0": {
+      "name": "com.unity.modules.vr",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.vr",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.wind@1.0.0": {
+      "name": "com.unity.modules.wind",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.wind",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.xr@1.0.0": {
+      "name": "com.unity.modules.xr",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.xr",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.subsystems@1.0.0": {
+      "name": "com.unity.modules.subsystems",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.subsystems",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.modules.hierarchycore@1.0.0": {
+      "name": "com.unity.modules.hierarchycore",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.modules.hierarchycore",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.sysroot@2.0.10": {
+      "name": "com.unity.sysroot",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.sysroot",
+      "fingerprint": "7bbbb9339c143f6fbccaeb0a52c77b9217b35a71",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.0.10",
+      "source": "registry"
+    },
+    "com.unity.sysroot.linux-x86_64@2.0.9": {
+      "name": "com.unity.sysroot.linux-x86_64",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.sysroot.linux-x86_64",
+      "fingerprint": "1998d1c7730e48fa49f28d983fececfc9cbd970b",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.0.9",
+      "source": "registry"
+    },
+    "com.unity.ext.nunit@2.0.5": {
+      "name": "com.unity.ext.nunit",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.ext.nunit",
+      "fingerprint": "60ef35ffd3cd5e2f5c8887a4a4ca6148854cd092",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.0.5",
+      "source": "registry"
+    },
+    "com.unity.services.core@1.13.0": {
+      "name": "com.unity.services.core",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.services.core",
+      "fingerprint": "ebe452e552b92964f64e438bdc2e6a7d850c66cc",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "1.13.0",
+      "source": "registry"
+    },
+    "com.unity.services.analytics@5.1.1": {
+      "name": "com.unity.services.analytics",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.services.analytics",
+      "fingerprint": "3755d89791d460e409a5f582448867001b79821f",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "5.1.1",
+      "source": "registry"
+    },
+    "com.unity.mobile.notifications@2.3.2": {
+      "name": "com.unity.mobile.notifications",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.mobile.notifications",
+      "fingerprint": "be4d525ffa46d1f7d9a8f0ae1f957773510e91c0",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "2.3.2",
+      "source": "registry"
+    },
+    "com.unity.transport@2.3.0": {
+      "name": "com.unity.transport",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.transport",
+      "fingerprint": "ac326714c1709ed1bffcf14fc375314346e8e665",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "2.3.0",
+      "source": "registry"
+    },
+    "com.unity.nuget.mono-cecil@1.11.4": {
+      "name": "com.unity.nuget.mono-cecil",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.nuget.mono-cecil",
+      "fingerprint": "d6f9955a5d5f84d45442ff1ad0fb694cc6e2fd62",
+      "editorCompatibility": "2018.4.0a1",
+      "version": "1.11.4",
+      "source": "registry"
+    },
+    "com.unity.editorcoroutines@1.0.0": {
+      "name": "com.unity.editorcoroutines",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.editorcoroutines",
+      "fingerprint": "7d48783e7b8cfcee5f8ef9ba787ed0d9dad4ebca",
+      "editorCompatibility": "2018.1.0a1",
+      "version": "1.0.0",
+      "source": "registry"
+    },
+    "com.unity.performance.profile-analyzer@1.2.2": {
+      "name": "com.unity.performance.profile-analyzer",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.performance.profile-analyzer",
+      "fingerprint": "fe7acfd2717a98ded6ddc33be6b2ebe4459a2add",
+      "editorCompatibility": "2020.3.0a1",
+      "version": "1.2.2",
+      "source": "registry"
+    },
+    "com.unity.testtools.codecoverage@1.2.6": {
+      "name": "com.unity.testtools.codecoverage",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.testtools.codecoverage",
+      "fingerprint": "205a02cbcb39584f20b51c49b853047aceb3a3a7",
+      "editorCompatibility": "2019.3.0a1",
+      "version": "1.2.6",
+      "source": "registry"
+    },
+    "com.unity.splines@2.6.1": {
+      "name": "com.unity.splines",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.splines",
+      "fingerprint": "930eaf55e68be9f5d58f63035b2a96d9c3c3e695",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "2.6.1",
+      "source": "registry"
+    },
+    "com.unity.nuget.newtonsoft-json@3.2.1": {
+      "name": "com.unity.nuget.newtonsoft-json",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.nuget.newtonsoft-json",
+      "fingerprint": "74deb55db2a0c29ddfda576608bcb86abbd13ee6",
+      "editorCompatibility": "2018.4.0a1",
+      "version": "3.2.1",
+      "source": "registry"
+    },
+    "com.unity.burst@1.8.17": {
+      "name": "com.unity.burst",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.burst",
+      "fingerprint": "3aba14bc08eea56d416846e80adc0dc70d40a448",
+      "editorCompatibility": "2020.3.0a1",
+      "version": "1.8.17",
+      "source": "registry"
+    },
+    "com.unity.collections@2.4.3": {
+      "name": "com.unity.collections",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.collections",
+      "fingerprint": "eba9b2ae55c09c3548eaeac72a96dda87b0640cf",
+      "editorCompatibility": "2022.3.11f1",
+      "version": "2.4.3",
+      "source": "registry"
+    },
+    "com.unity.mathematics@1.3.1": {
+      "name": "com.unity.mathematics",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.mathematics",
+      "fingerprint": "0cc332b9879082676002a97378a6d3d6296282a3",
+      "editorCompatibility": "2018.3.0a1",
+      "version": "1.3.1",
+      "source": "registry"
+    },
+    "com.unity.settings-manager@2.0.1": {
+      "name": "com.unity.settings-manager",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.settings-manager",
+      "fingerprint": "56a930affa1e4462d3595b5c19a1c2a4bf2015d2",
+      "editorCompatibility": "2018.4.0a1",
+      "version": "2.0.1",
+      "source": "registry"
+    },
+    "com.unity.test-framework.performance@3.0.3": {
+      "name": "com.unity.test-framework.performance",
+      "resolvedPath": "D:\\miguel\\Documents\\Godot-unity\\Natural-Disasters-The-Game-Unity\\Library\\PackageCache\\com.unity.test-framework.performance",
+      "fingerprint": "fb0dc592af8b524f1a06c50d7caf95552f1bcd2f",
+      "editorCompatibility": "2020.3.0a1",
+      "version": "3.0.3",
+      "source": "registry"
+    }
+  }
+}
