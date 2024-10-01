@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638615103745452753
-    m_Hash: 2922938437
+      ticks: 638627660212096789
+    m_Hash: 902871003
   m_LockFileStatus:
     m_FilePath: D:/miguel/Documents/Godot-unity/Natural-Disasters-The-Game-Unity/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638615103745528861
-    m_Hash: 2978939382
+      ticks: 638627660212106786
+    m_Hash: 90233973
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: D:/miguel/Documents/Godot-unity/Natural-Disasters-The-Game-Unity/Packages
-m_EditorVersion: 6000.0.18f1 (3699cf869f9b)
+m_EditorVersion: 6000.0.21f1 (e2bacb8dee3a)
 m_ResolvedPackages:
 - packageId: com.unity.2d.sprite@1.0.0
   testable: 0
@@ -174,7 +174,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: cf9771037a2571b3bca1d1d81e6b255605ad023d
+  fingerprint: dead75a9883ab9df525e812fcb4e87103a8dc9cf
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.0
@@ -355,7 +355,6 @@ m_ResolvedPackages:
     - 2.0.3
     - 2.0.4
     compatible:
-    - 2.0.3
     - 2.0.4
     recommended: 2.0.4
     deprecated: []
@@ -405,7 +404,7 @@ m_ResolvedPackages:
     revision: 2c565f88d424bed980de32ead5a48791e9db9936
     path: 
   unityLifecycle:
-    version: 2.0.3
+    version: 2.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -422,7 +421,7 @@ m_ResolvedPackages:
   fingerprint: 3f89ad87253dcaae2d0bb583bd5ef4c4f2c17764
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.0.3
+    minimumPackageVersion: 2.0.4
     minimumUnityVersion: 2023.2.0a18
 - packageId: com.unity.analytics@3.8.1
   testable: 0
@@ -499,7 +498,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.services.analytics
-    version: 5.1.1
+    version: 6.0.1
   - name: com.unity.services.core
     version: 1.13.0
   - name: com.unity.modules.androidjni
@@ -678,7 +677,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.mathematics
-    version: 1.3.1
+    version: 1.3.2
   - name: com.unity.settings-manager
     version: 2.0.1
   keywords:
@@ -759,10 +758,10 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 2.10.1
     minimumUnityVersion: 2022.3.0a1
-- packageId: com.unity.collab-proxy@2.4.4
+- packageId: com.unity.collab-proxy@2.5.1
   testable: 0
   isDirectDependency: 1
-  version: 2.4.4
+  version: 2.5.1
   source: 1
   resolvedPath: D:\miguel\Documents\Godot-unity\Natural-Disasters-The-Game-Unity\Library\PackageCache\com.unity.collab-proxy
   assetPath: Packages/com.unity.collab-proxy
@@ -773,7 +772,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Editor
-  type: assets
+  type: 
   description: The package gives you the ability to use Unity Version Control in
     the Unity editor. To use Unity Version Control, a subscription is required. Learn
     more about how you can get started for free by visiting https://unity.com/solutions/version-control
@@ -854,10 +853,11 @@ m_ResolvedPackages:
     - 2.4.3
     - 2.4.4
     - 2.5.1
+    - 2.5.2
     compatible:
-    - 2.4.4
     - 2.5.1
-    recommended: 2.4.4
+    - 2.5.2
+    recommended: 2.5.2
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -888,16 +888,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638573492230000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.4/manual/index.html
+  datePublishedTicks: 638612183804560000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.5/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 03b1de8d838eb1e427cb1b1d8bf9157f33377542
+    revision: 470a7a1321fe499cf5055d6b1d64da3a08c8dcbc
     path: 
   unityLifecycle:
-    version: 2.4.4
+    version: 2.5.1
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -907,14 +907,25 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Fixed\n\n- Fixed the Unity Editor stuck on \"Creating
-    workspace\" when \"Use Unity Version Control\" was selected from the Hub"}'
+  upmReserved: '{"changelog":"### Added\n\n- Allow deletion of non-empty branches
+    that have not been merged anywhere\n- New setting to control if new files must
+    be automatically added to source control\n\n### Changed\n\n- Improve the dialog
+    to install Unity Version Control from the Editor\n\n### Fixed\n\n- Fixed ''an
+    existing xxx operation has locked the workspace'' error on finding changes operation\n-
+    Fixed a case of a hang happening on Editor quit\n- Fixed the login that could
+    fail for Enterprise installation\n- Fixed undo operation that didn''t capture
+    changes in packages\n- Fixed history that was not shown when there was no desktop
+    client installed\n- Fixed unity 6 Editor going into the background after a dialog
+    was closed\n- Fixed wrong font size when changing to changesets view\n- Fixed
+    the \"Upgrade plan\" button in Unity plugin that used a obsolete redirection
+    link\n- Fixed Logs that were configured too late in the initialization\n- Fixed
+    the minimum supported version (2020.3.48f1 LTS) in the README"}'
   assetStore:
     productId: 
-  fingerprint: f073ab5b7d4916dd0953caa6b29a435a4e9a3df8
+  fingerprint: c810163b1645af64e676552b0e8d0b3c575991e6
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.4.4
+    minimumPackageVersion: 2.5.1
     minimumUnityVersion: 2020.3.48f1
 - packageId: com.unity.device-simulator.devices@1.0.0
   testable: 0
@@ -1391,7 +1402,7 @@ m_ResolvedPackages:
   - name: com.unity.burst
     version: 1.8.17
   - name: com.unity.mathematics
-    version: 1.3.1
+    version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.collections
@@ -1429,8 +1440,8 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.10.0
-    nextVersion: 2.0.0-pre.3
-    recommendedVersion: 2.0.0-pre.3
+    nextVersion: 2.0.0-pre.4
+    recommendedVersion: 2.0.0
     isDeprecated: 0
     deprecationMessage: 
   isDeprecated: 0
@@ -1706,7 +1717,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
   - name: com.unity.services.analytics
-    version: 5.1.1
+    version: 6.0.1
   - name: com.unity.ugui
     version: 2.0.0
   - name: com.unity.modules.ui
@@ -2468,9 +2479,11 @@ m_ResolvedPackages:
     - 2.1.8
     - 2.1.9
     - 2.1.10
+    - 2.1.11
     compatible:
     - 2.1.10
-    recommended: 2.1.10
+    - 2.1.11
+    recommended: 2.1.11
     deprecated: []
   dependencies:
   - name: com.unity.modules.vr
@@ -4000,8 +4013,7 @@ m_ResolvedPackages:
     url: 
   category: 
   type: module
-  description: 'The UnityAnalytics module implements APIs required to use Unity Analytics.
-    Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.UnityAnalyticsModule.html'
+  description: 
   errors: []
   versions:
     all:
@@ -5330,10 +5342,10 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 1.13.0
     minimumUnityVersion: 2019.4.0a1
-- packageId: com.unity.services.analytics@5.1.1
+- packageId: com.unity.services.analytics@6.0.1
   testable: 0
   isDirectDependency: 0
-  version: 5.1.1
+  version: 6.0.1
   source: 1
   resolvedPath: D:\miguel\Documents\Godot-unity\Natural-Disasters-The-Game-Unity\Library\PackageCache\com.unity.services.analytics
   assetPath: Packages/com.unity.services.analytics
@@ -5344,7 +5356,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: assets
+  type: asset
   description: The Unity Analytics package automatically collects core events and
     user properties when someone uses your game or application, and enables you to
     track specific in-game actions your user performs by defining custom events.
@@ -5380,7 +5392,6 @@ m_ResolvedPackages:
     - 5.1.1
     - 6.0.1
     compatible:
-    - 5.1.1
     - 6.0.1
     recommended: 6.0.1
     deprecated: []
@@ -5388,7 +5399,7 @@ m_ResolvedPackages:
   - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.services.core
-    version: 1.12.5
+    version: 1.12.4
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   resolvedDependencies:
@@ -5421,16 +5432,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638490291460000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.services.analytics@5.1/manual/index.html
+  datePublishedTicks: 638587935530000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.services.analytics@6.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git
-    revision: a2500ef2ce79a436d6e5f3f6acde6214eb5a089f
+    revision: e54e6e452cff2d0d31e9b5530b2dbd8ffcf2f0e7
     path: 
   unityLifecycle:
-    version: 5.1.1
+    version: 6.0.1
     nextVersion: 
     recommendedVersion: 6.0.1
     isDeprecated: 0
@@ -5440,18 +5451,23 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n\n- Added Apple Privacy Manifest\n\n###
-    Changed\n\n* Updated `com.unity.services.core` dependency to 1.12.5 which contains
-    Apple Privacy Manifest","gameService":{"configurePath":"Project/Services/Analytics
+  upmReserved: '{"changelog":"### Added\n\n* New Analytics Debug Panel accessible
+    in the Unity Editor from Services -> Analytics -> Debug Panel\n  * Monitor the
+    SDK''s activity while you play-test\n  * Observe events as they are recorded
+    and uploaded\n  * ... and more!\n\n### Breaking Changes\n\n* The minimum supported
+    editor version for the UGS Analytics SDK is now 2021.3\n* All methods, classes
+    and structs marked as `Obsolete` in earlier versions of the SDK have been removed\n 
+    * If you have trouble upgrading, move to 5.1.0 first, fix the deprecation warnings
+    there, then move to 6.0.0","gameService":{"configurePath":"Project/Services/Analytics
     - Gaming Services","genericDashboardUrl":"https://dashboard.unity3d.com/analytics","projectDashboardUrl":"https://dashboard.unity3d.com/organizations/{0}/projects/{1}/analytics/events","projectDashboardUrlType":"OrganizationKeyAndProjectGuid"},"supportedPlatforms":["Android","iOS","Linux","Mac","PC","Windows
     8.1 Universal","Windows 10 Universal","WebGL"]}'
   assetStore:
     productId: 
-  fingerprint: 3755d89791d460e409a5f582448867001b79821f
+  fingerprint: f7e249983920dd67eba8952b09e37a6fe4582dd0
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 5.1.1
-    minimumUnityVersion: 2019.4.0a1
+    minimumPackageVersion: 6.0.1
+    minimumUnityVersion: 2021.3.0a1
 - packageId: com.unity.mobile.notifications@2.3.2
   testable: 0
   isDirectDependency: 0
@@ -5664,7 +5680,7 @@ m_ResolvedPackages:
   - name: com.unity.burst
     version: 1.8.17
   - name: com.unity.mathematics
-    version: 1.3.1
+    version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.collections
@@ -6155,7 +6171,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.mathematics
-    version: 1.3.1
+    version: 1.3.2
   - name: com.unity.settings-manager
     version: 2.0.1
   keywords:
@@ -6455,9 +6471,11 @@ m_ResolvedPackages:
     - 1.8.15
     - 1.8.16
     - 1.8.17
+    - 1.8.18
     compatible:
     - 1.8.17
-    recommended: 1.8.17
+    - 1.8.18
+    recommended: 1.8.18
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
@@ -6466,7 +6484,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.mathematics
-    version: 1.3.1
+    version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   keywords: []
@@ -6631,7 +6649,7 @@ m_ResolvedPackages:
   - name: com.unity.burst
     version: 1.8.17
   - name: com.unity.mathematics
-    version: 1.3.1
+    version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.test-framework
@@ -6687,10 +6705,10 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 2.4.3
     minimumUnityVersion: 2022.3.11f1
-- packageId: com.unity.mathematics@1.3.1
+- packageId: com.unity.mathematics@1.3.2
   testable: 0
   isDirectDependency: 0
-  version: 1.3.1
+  version: 1.3.2
   source: 1
   resolvedPath: D:\miguel\Documents\Godot-unity\Natural-Disasters-The-Game-Unity\Library\PackageCache\com.unity.mathematics
   assetPath: Packages/com.unity.mathematics
@@ -6727,7 +6745,6 @@ m_ResolvedPackages:
     - 1.3.1
     - 1.3.2
     compatible:
-    - 1.3.1
     - 1.3.2
     recommended: 1.3.2
     deprecated: []
@@ -6747,16 +6764,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638265749150000000
+  datePublishedTicks: 638409134840000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.mathematics@1.3/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/Unity.Mathematics.git
-    revision: c4f37031a75eb8afb8dfaf5d68fbcce226c70749
+    revision: 1695a8503482a3131be78cc26308a93f82c05b04
     path: 
   unityLifecycle:
-    version: 1.3.1
+    version: 1.3.2
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -6766,28 +6783,17 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n* Added `math.square` to compute the square
-    (x * x).\n* Added `math.orthonormal_basis` to compute an orthonormal basis from
-    a single unit length vector.\n* Added `math.sign` for int, int2, int3 and int4.\n*
-    Added `math.chgsign` for float, float2, float3, and float4.\n* Added `math.Euler`
-    to convert a quaternion to Euler angles.\n* Added `math.angle` to compute the
-    angle between two unit quaternions.\n* Added `math.rotation` to extract a quaternion
-    rotation from a float3x3 (that may have scale).\n* Added `math.mulScale` to scale
-    columns of a float3x3 with scaling coefficients in a float3.\n* Added `math.scaleMul`
-    to scale rows of a float3x3 with scaling coefficients in a float3.\n* Added `AffineTransform`
-    type.\n* Added `PI2`, `PIHALF`, `TAU`, `TODEGREES` and `TORADIANS` constants.\n\n###
-    Changed\n* `asfloat(uint)`, `asuint(float)`, `asint(float)` and other related
-    methods are now faster in mono without Burst. Other methods which use these will
-    see a performance improvement.\n* Modified `quaternion.nlerp` to be branchless.\n*
-    More descriptive parameter names for many methods in `math` class.\n* Made `Il2CppEagerStaticClassConstructionAttribute`
-    internal to avoid conflicts with other definitions outside of the package."}'
+  upmReserved: '{"changelog":"### Fixed\n* Fixed `math.hash` crash when using IL2CPP
+    builds on Arm 32 bit devices.\n* Fixed obsolete method usage warnings for `MatrixDrawer.CanCacheInspectorGUI`
+    and `PrimitiveVectorDrawer.CanCacheInspectorGUI` in UNITY_2023_2_OR_NEWER.\n*
+    Updated minimum editor version to 2021.3"}'
   assetStore:
     productId: 
-  fingerprint: 0cc332b9879082676002a97378a6d3d6296282a3
+  fingerprint: 8017b507cc74bf0a1dd14b18aa860569f807314d
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 1.3.1
-    minimumUnityVersion: 2018.3.0a1
+    minimumPackageVersion: 1.3.2
+    minimumUnityVersion: 2021.3.0a1
 - packageId: com.unity.settings-manager@2.0.1
   testable: 0
   isDirectDependency: 0
@@ -6997,4 +7003,4 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 3.0.3
     minimumUnityVersion: 2020.3.0a1
-m_BuiltInPackagesHash: c9fb3817a895082dd98fc4bf7f43f4d92307ba89
+m_BuiltInPackagesHash: beb15fb8377a83d109d1d67ceca1a5dcb85807c1
