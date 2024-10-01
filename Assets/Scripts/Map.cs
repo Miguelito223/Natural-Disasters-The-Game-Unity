@@ -2,6 +2,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.ValueTuple;
 
 public class Map : MonoBehaviourPunCallbacks
 {
@@ -108,7 +109,7 @@ public class Map : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void SpawnNaturalDisasters(int currentdisasters | int currentdisasters)
+    public void SpawnNaturalDisasters(object currentdisasters)
     {
         if (currentdisasters.GetType() == typeof(string))
         { 
