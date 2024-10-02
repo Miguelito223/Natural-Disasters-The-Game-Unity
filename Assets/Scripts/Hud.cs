@@ -40,16 +40,17 @@ public class Hud : MonoBehaviour
     void Update()
     {
         information.text =
-            " Health: " + player.health + " %\n" +
-            " Temperature: " + GlobalsVariables.instance.temp + " ºC\n" +
-            " Humidity: " + GlobalsVariables.instance.humidity + " %\n" +
-            " Body Oxygen: " + player.body_oxy + " %\n" +
-            " Body Temperature: " + player.body_temp + " ºC\n" +
-            " Body Radiation: " + player.body_rad + " %\n" +
-            " Radiation: " + GlobalsVariables.instance.radiation + " %\n" +
-            " Oxygen: " + GlobalsVariables.instance.oxygen + " %\n" +
-            " wind speed: " + GlobalsVariables.instance.wind_speed + " km/s\n" +
-            " wind direction: " + GlobalsVariables.instance.wind_direction + " º\n"
+            "Health: " + player.health.ToString("f0") + "%\n" +
+            "Temperature: " + GlobalsVariables.instance.temp.ToString("f2") + "ºC\n" +
+            "Humidity: " + GlobalsVariables.instance.humidity.ToString("f0") + "%\n" +
+            "Body Oxygen: " + player.body_oxy.ToString("f0") + "%\n" +
+            "Body Temperature: " + player.body_temp.ToString("f2") + "ºC\n" +
+            "Body Radiation: " + player.body_rad.ToString("f0") + "%\n" +
+            "Radiation: " + GlobalsVariables.instance.radiation.ToString("f0") + "%\n" +
+            "Oxygen: " + GlobalsVariables.instance.oxygen.ToString("f0") + "%\n" +
+            "Pressure: " + GlobalsVariables.instance.pressure.ToString("f0") + "hPa\n" +
+            "wind speed: " + GlobalsVariables.instance.wind_speed.ToString("f2") + "km/s\n" +
+            "wind direction: " + GlobalsVariables.instance.convert_VectorToAngle(GlobalsVariables.instance.wind_direction).ToString("f0") + "º\n"
         ;
 
         float freq = Mathf.Clamp((1 - ((44 - Mathf.Round(player.body_temp)) / 20)) * (180f / 60f), heartRateMin, heartRateMax);

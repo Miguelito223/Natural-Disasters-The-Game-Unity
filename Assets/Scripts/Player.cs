@@ -25,13 +25,18 @@ public class Player : MonoBehaviourPunCallbacks
     public bool isunderground = false;
     public bool isoutdoor = false;
 
-    public float compensationMax = 10f;    // Compensación máxima en grados
-    public float bodyHeatGenK = 1f;        // Generación de calor corporal (1 grado por segundo)
-    public float bodyHeatGenMax = 0.01f / 4;
-    public float fireHeatEmission = 50f;   // Emisión de calor por fuego
-    public float minBodyTemp = 24f;        // Temperatura corporal mínima
-    public float maxBodyTemp = 44f;        // Temperatura corporal máxima
-    public float BRadiation = 0f;
+    // Factores de generación de calor
+    private float bodyHeatGenK = 1f;
+    private float bodyHeatGenMAX = 0.01f / 4f;
+    private float fireHeatEmission = 50f;
+    private float heatScale = 0f;
+    private float coolScale = 0f;
+    public float minTemp = 24f;        // Temperatura corporal mínima
+    public float maxTemp = 44f;        // Temperatura corporal máxima
+    public float min_bdradiation = 0;
+    public float Max_bradiation = 100;
+    public float minOxygen = 0f;
+    public float maxOxygen = 100f;
     public float radiationThreshold = 80f;
 
     // Chance to apply damage (50%)
@@ -40,6 +45,8 @@ public class Player : MonoBehaviourPunCallbacks
 
     public LayerMask fireLayer;            // Capa que representa fuentes de calor (fuego)
     public LayerMask iceLayer;             // Capa que representa fuentes de frío (hielo)
+
+    public Material tempEffectMaterial;
 
     private float nextUpdateTime = 0f;     // Tiempo de la siguiente actualización de temperatura
 
@@ -60,14 +67,11 @@ public class Player : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (Time.time >= nextUpdateTime)
-        {
-            UpdateTemperature();
-            UpdateOxygen();
-            UpdateRadiation();
-            nextUpdateTime = Time.time + 1f; // Actualiza cada segundo
-        }
 
+        
+        UpdateTemperature(Time.deltaTime);
+        UpdateOxygen(Time.deltaTime);
+        UpdateRadiation(Time.deltaTime);
         camera_control();
         movement_control();
     }
@@ -80,14 +84,14 @@ public class Player : MonoBehaviourPunCallbacks
             return true;
     }
 
-    public void Damage(string damagetype)
+    public void Damage(string damagetype, float damageamount=5)
     {
         if (!IsPlayerAlive())
             return;
 
         if (damagetype == "heat")
         {
-            health -= 1;
+            health -= damageamount;
             if (health <= 0)
             {
                 Death();
@@ -95,15 +99,15 @@ public class Player : MonoBehaviourPunCallbacks
         }
         else if (damagetype == "cold")
         { 
-            health -= 1;
+            health -= damageamount;
             if (health <= 0)
             {
                 Death();
             }
         }
-        else if (damagetype == "Drown")
+        else if (damagetype == "drown")
         {
-            health -= 5;
+            health -= damageamount;
             if (health <= 0)
             {
                 Death();
@@ -111,7 +115,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
         else
         {
-            health -= 3;
+            health -= damageamount;
             if (health <= 0)
             {
                 Death();
@@ -128,106 +132,119 @@ public class Player : MonoBehaviourPunCallbacks
     }
 
 
-    private void UpdateTemperature()
+    private void UpdateTemperature(float deltaTime)
     {
-        float globalTemperature = GlobalsVariables.instance.temp;
-        Debug.Log("Temperatura Global: " + globalTemperature);
+        // Cálculos de equilibrio térmico
+        float ambientTemperature = 0;
+        float coreEquilibrium = Mathf.Clamp((37f - body_temp) * bodyHeatGenK, -bodyHeatGenMAX, bodyHeatGenMAX);
+        float heatSourceEquilibrium = Mathf.Clamp((fireHeatEmission * heatScale) * bodyHeatGenK, 0f, bodyHeatGenMAX * 1.3f);
+        float coldSourceEquilibrium = Mathf.Clamp((fireHeatEmission * coolScale) * bodyHeatGenK, bodyHeatGenMAX * -1.3f, 0f);
+        float ambientEquilibrium = Mathf.Clamp((ambientTemperature - body_temp) * bodyHeatGenK, -bodyHeatGenMAX * 1.1f, bodyHeatGenMAX * 1.1f);
 
-        // Encuentra la fuente de calor más cercana (fuego)
-        Collider[] fireColliders = Physics.OverlapSphere(transform.position, 10f, fireLayer);
-        float heatScale = 0f;
-        foreach (Collider fire in fireColliders)
-        {
-            float distance = Vector3.Distance(transform.position, fire.transform.position);
-            heatScale = Mathf.Clamp(200f / (distance * distance), 0f, 1f);
-        }
-
-        // Encuentra la fuente de frío más cercana (hielo)
-        Collider[] iceColliders = Physics.OverlapSphere(transform.position, 10f, iceLayer);
-        float coolScale = 0f;
-        foreach (Collider ice in iceColliders)
-        {
-            float distance = Vector3.Distance(transform.position, ice.transform.position);
-            coolScale = Mathf.Clamp(200f / (distance * distance), 0f, 1f) * -1f;
-        }
-
-        // Cálculo de la temperatura
-        float coreEquilibrium = Mathf.Clamp((37f - body_temp) * bodyHeatGenK, -bodyHeatGenMax, bodyHeatGenMax);
-        float heatSourceEquilibrium = Mathf.Clamp((fireHeatEmission * heatScale) * bodyHeatGenK, 0f, bodyHeatGenMax * 1.3f);
-        float coldSourceEquilibrium = Mathf.Clamp((fireHeatEmission * coolScale) * bodyHeatGenK, bodyHeatGenMax * -1.3f, 0f);
-        float ambientEquilibrium = Mathf.Clamp(((globalTemperature - body_temp) * bodyHeatGenK), -bodyHeatGenMax * 1.1f, bodyHeatGenMax * 1.1f);
-
-        // Condición para la zona de confort térmico (5°C - 37°C)
-        if (globalTemperature >= 5f && globalTemperature <= 37f)
+        // Ajuste para la temperatura ambiente dentro del rango 5 a 37 grados
+        if (ambientTemperature >= 5f && ambientTemperature <= 37f)
         {
             ambientEquilibrium = 0f;
         }
 
-        // Actualiza la temperatura corporal del jugador
-        body_temp = Mathf.Clamp(body_temp + coreEquilibrium + heatSourceEquilibrium + coldSourceEquilibrium + ambientEquilibrium, minBodyTemp, maxBodyTemp);
+        // Actualizar la temperatura corporal
+        body_temp = Mathf.Clamp(body_temp + coreEquilibrium + heatSourceEquilibrium + coldSourceEquilibrium + ambientEquilibrium, minTemp, maxTemp);
 
-        Debug.Log("Temperatura Corporal: " + body_temp);
-
-        TemperatureDamage();
-    }
-
-    void TemperatureDamage()
-    {
-        // Apply damage based on extreme temperatures
-        if (body_temp >= maxBodyTemp)
+        // Aplicar el efecto visual de temperatura
+        if (tempEffectMaterial != null)
         {
-            Damage("heat");
-        }
-        else if (body_temp <= minBodyTemp)
-        {
-            Damage("cold");
+            tempEffectMaterial.SetFloat("_Temp", body_temp);
         }
 
-        // If body temperature exceeds lethal thresholds, handle player death
-        if (body_temp >= 44f)
-        {
-            Damage("heat");
-        }
-        else if (body_temp <= 24f)
-        {
-            Damage("cold");
-        }
-        
-    }
+        // Cálculo de los efectos de calor y frío (alpha)
+        float alphaHot = 1f - ((44f - Mathf.Clamp(body_temp, 39f, 44f)) / 5f);
+        float alphaCold = ((35f - Mathf.Clamp(body_temp, 24f, 35f)) / 11f);
 
-    private void UpdateRadiation()
-    {
-
-        if (BRadiation >= radiationThreshold && GlobalsVariables.instance.IsOutdoor(gameObject))
+        // Aplicar daño por calor o frío extremo
+        if (Random.Range(1, 26) == 25)
         {
-            if (GlobalsVariables.instance.HitChance(hitChance))
+            if (alphaCold != 0)
             {
-                Damage("acid");
+                Damage("cold", alphaHot + alphaCold);
+            }
+            else if (alphaHot != 0)
+            {
+                Damage("heat", alphaHot + alphaCold);
             }
         }
-        
+
+        // Simular vómito si la temperatura es muy alta
+        if (body_temp > 39f && Random.Range(0, 400) == 0)
+        {
+            Vomit();
+        }
+
+        // Simular estornudo si la temperatura es muy baja
+        if (body_temp < 35f && Random.Range(0, 400) == 0)
+        {
+            Sneeze();
+        }
+
+
     }
 
-    private void UpdateOxygen()
+    // Función para simular vómito
+    void Vomit()
     {
-        if (isunderwater || isunderlava || isunderground || GlobalsVariables.instance.oxygen <= 20)
-        {
-            // Reduce el oxígeno
-            body_oxy = Mathf.Clamp(body_oxy - (oxygenDecreaseRate * Time.deltaTime), 0, 100);
+        // Lógica para vómito
+        Debug.Log("Player vomits due to overheating.");
+    }
 
-            if (body_oxy <= 0)
-            {
-                if (GlobalsVariables.instance.HitChance(hitChance))
-                {
-                    // Aplica daño si el oxígeno está en 0
-                    Damage("Drown");
-                }
-            }
+    // Función para simular estornudo
+    void Sneeze()
+    {
+        // Lógica para estornudo
+        Debug.Log("Player sneezes due to cold.");
+    }
+    private void UpdateRadiation(float deltaTime)
+    {
+        float globalRadiation = GlobalsVariables.instance.radiation;
+        
+        if (globalRadiation >= radiationThreshold && GlobalsVariables.instance.IsOutdoor(gameObject))
+        {
+            body_rad = Mathf.Clamp(body_rad + 5 * Time.deltaTime, min_bdradiation, Max_bradiation);
         }
         else
         {
-            // Recupera oxígeno si el jugador no está en un entorno hostil
-            body_oxy = Mathf.Clamp(body_oxy + (oxygenDecreaseRate * Time.deltaTime), 0, 100);
+            body_rad = Mathf.Clamp(body_rad - 5 * Time.deltaTime, min_bdradiation, Max_bradiation);
+        }
+
+        if (body_rad >= 100)
+        {
+           if (Random.Range(1, 25) == 25)
+            {
+                Damage("radiation", Random.Range(1, 30));
+            }
+        }
+        
+    }
+
+    private void UpdateOxygen(float deltaTime)
+    {
+        float oxygenLevel = GlobalsVariables.instance.oxygen;
+        // Si el oxígeno en el ambiente es bajo o el jugador está en agua/lava, disminuir el oxígeno corporal
+        if (oxygenLevel <= 20f || isunderwater || isunderlava)
+        {
+            body_oxy = Mathf.Clamp(body_oxy - 5f * deltaTime, minOxygen, maxOxygen);
+        }
+        else
+        {
+            // De lo contrario, aumentar el oxígeno corporal
+            body_oxy = Mathf.Clamp(body_oxy + 5f * deltaTime, minOxygen, maxOxygen);
+        }
+
+        // Si el oxígeno corporal se agota, causar daño al jugador
+        if (body_oxy <= 0f)
+        {
+            if (Random.Range(1, 26) == 25) // Probabilidad de daño
+            {
+                Damage("drown", Random.Range(1, 31));
+            }
         }
     }
 

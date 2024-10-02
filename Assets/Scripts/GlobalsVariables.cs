@@ -68,9 +68,39 @@ public class GlobalsVariables : MonoBehaviourPunCallbacks
         return (kmph * 1000) / 3600;
     }
 
+    public float ConvertDegreesToHours(float degrees)
+    {
+        return degrees / 15;
+    }
+
+    public float convert_VectorToAngle(Vector3 Vector)
+    {
+
+        float x = Vector.x;
+
+        float y = Vector.z;
+
+
+        return (360 + (Mathf.Rad2Deg * Mathf.Atan2(y, x))) % 360;
+    }
+
+    public float ConvertHoursToDegrees(float hours)
+    {
+        return hours * 15;
+    }
+
+    public float ConvertDegreestoMinutes(float degrees)
+    {
+        return (degrees / 15) * 60;
+    }
     public float ConvertMetersPerSecondToKmph(float metres)
     {
         return (metres * 39.37f) / 0.75f;
+    }
+
+    public float ConvertDegreesToHour(float degrees)
+    {
+        return degrees / 15;
     }
 
     public bool IsSomethingBlockingWind(GameObject obj)
@@ -254,15 +284,15 @@ public class GlobalsVariables : MonoBehaviourPunCallbacks
         temp = Mathf.Clamp(temp, -273, 273);
         humidity = Mathf.Clamp(humidity, 0, 100);
         radiation = Mathf.Clamp(radiation, 0, 100);
-        oxygen = Mathf.Clamp(humidity, 0, 100);
+        oxygen = Mathf.Clamp(oxygen, 0, 100);
         pressure = Mathf.Clamp(pressure, 0, 10000);
     }
     private void AtmosphereFadeControl()
     {
-        temp = Mathf.Lerp(0.005f, temp, temp_lerp);
-        humidity = Mathf.Lerp(0.005f, humidity, humidity_lerp);
-        wind_speed = Mathf.Lerp(0.005f, wind_speed, wind_speed_lerp);
+        temp = Mathf.Lerp(temp, temp_lerp, 0.005f);
+        humidity = Mathf.Lerp(humidity, humidity_lerp, 0.005f);
+        wind_speed = Mathf.Lerp(wind_speed, wind_speed_lerp, 0.005f);
         wind_direction = Vector3.Lerp(wind_direction, wind_direction_lerp, 0.005f);
-        radiation = Mathf.Lerp(0.005f, radiation, radiation_lerp);
+        radiation = Mathf.Lerp(radiation, radiation_lerp, 0.005f);
     }
 }

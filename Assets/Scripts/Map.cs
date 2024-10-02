@@ -2,27 +2,27 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.ValueTuple;
+using ExitGames.Client.Photon;
 
 public class Map : MonoBehaviourPunCallbacks
 {
     public PhotonView PlayerScene;
     public GameObject PlayerScene2;
     public Transform SpawnPosition;
-    public GameObject MeteorModel;
-    public GameObject VolcanoModel;
+    public GameObject MeteorPrefab;
+    public GameObject VolcanoPrefab;
+    public GameObject TornadoPrefab;
+    public GameObject TsunamiPrefab;
 
-    public static float originaltime = 180f;
     public static int MaxValue = 10;
     public static int MinValue = 0;
+    public double starttime = 180f;
 
-    private string CurrentDisasters = "sun";
-    private int CurrentDisastersInt = 0;
-    private float time = originaltime;
+    public string CurrentDisasters = "sun";
+    public int CurrentDisastersInt = 0;
+    public double timer;
 
-
-
-
+    Hashtable CustomeValue;
 
 
     void Start()
@@ -30,6 +30,10 @@ public class Map : MonoBehaviourPunCallbacks
         if (GlobalsVariables.instance.IsNetworking)
         {
             OnJoinedRoom();
+            timer = starttime;
+            CustomeValue = new Hashtable();
+            CustomeValue.Add("StartTime", starttime);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
         }
         else
         {
@@ -46,20 +50,41 @@ public class Map : MonoBehaviourPunCallbacks
             GlobalsVariables.instance.Wind(obj);
         }
 
-        time -= Time.deltaTime;
+        if (GlobalsVariables.instance.IsNetworking) 
+        { 
+            timer -= PhotonNetwork.Time;
 
-        if (time <= 0.0f)
+            if (timer <= 0.0f)
+            {
+                RandomdizeNaturalDisasters();
+                timer = starttime;
+            }
+        }
+        else
         {
-            RandomdizeNaturalDisasters();
-            time = originaltime;
+            timer -= Time.deltaTime;
+
+            if (timer <= 0.0f)
+            {
+                RandomdizeNaturalDisasters();
+                timer = starttime;
+            }
         }
 
     }
 
     public void RandomdizeNaturalDisasters()
     {
-        int RandomDisastersInt = Random.Range(MinValue, MaxValue);
-        ConvertNaturalDisastersIntToString(RandomDisastersInt);
+        if (GlobalsVariables.instance.IsNetworking)
+        {
+            int RandomDisastersInt = Random.Range(MinValue, MaxValue);
+            PhotonView.Get(this).RPC("SpawnNaturalDisasters", RpcTarget.AllBuffered, RandomDisastersInt);
+        }
+        else
+        {
+            int RandomDisastersInt = Random.Range(MinValue, MaxValue);
+            SpawnNaturalDisasters(RandomDisastersInt);
+        }
     }
 
     public string ConvertNaturalDisastersIntToString(int currentdisasters)
@@ -109,66 +134,144 @@ public class Map : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void SpawnNaturalDisasters(object currentdisasters)
+    public void SpawnNaturalDisasters(int currentdisasters_index)
     {
-        if (currentdisasters.GetType() == typeof(string))
-        { 
-            switch (currentdisasters)
-            {
-                case "sun":
-                    SpawnSun();
-                case "tornado":
-                    SpawnTornado();
-                case "volcano":
-                    SpawnVolcano();
-                case "tsunami":
-                    SpawnTsunami();
-                case "meteors shower":
-                    SpawnMeteors();
-                case "blizzard":
-                    SpawnBlizzard();
-                case "sand storm":
-                    SpawnSandStorm();
-                default:
-                    NullFunction();
-            }
+
+        switch (currentdisasters_index)
+        {
+            case 0:
+                SpawnSun();
+                break;
+
+            case 1:
+                SpawnTornado();
+                break;
+
+            case 2:
+                SpawnVolcano();
+                break;
+
+            case 3:
+                SpawnTsunami();
+                break;
+
+            case 4:
+                SpawnMeteors();
+                break;
+
+            case 5:
+                SpawnBlizzard();
+                break;
+
+            case 6:
+                SpawnSandStorm();
+                break;
+
+            default:
+                NullFunction();
+                break;
         }
-        else if (currentdisasters.GetType() == typeof(int)) {
-            switch (currentdisasters)
-            {
-                case 0:
-                    SpawnSun();
-                case "tornado":
-                    SpawnTornado();
-                case "volcano":
-                    SpawnVolcano();
-                case "tsunami":
-                    SpawnTsunami();
-                case "meteors shower":
-                    SpawnMeteors();
-                case "blizzard":
-                    SpawnBlizzard();
-                case "sand storm":
-                    SpawnSandStorm();
-                default:
-                    NullFunction();
-            }
-        }
+
     }
 
     private void NullFunction()
     {
+        CurrentDisastersInt = -1;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+
         Debug.Log("Its a null disasters");
     }
 
     private void SpawnSun()
     {
-        GlobalsVariables.instance.temp = Random.RandomRange;
-        GlobalsVariables.instance.humidity =
-        GlobalsVariables.instance.radiation =
-        GlobalsVariables.instance.oxygen =
-        GlobalsVariables.instance.pressure = 
+        CurrentDisastersInt = 0;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+
+        GlobalsVariables.instance.temp = Random.Range(20, 31);
+        GlobalsVariables.instance.humidity = Random.Range(0, 20);
+        GlobalsVariables.instance.radiation = 0;
+        GlobalsVariables.instance.oxygen = 100;
+        GlobalsVariables.instance.pressure = Random.Range(10000, 10020);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(0, 10);
     }
+
+    void SpawnVolcano()
+    {
+        CurrentDisastersInt = 2;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+        GlobalsVariables.instance.temp = Random.Range(20, 31);
+        GlobalsVariables.instance.humidity = Random.Range(0, 20);
+        GlobalsVariables.instance.radiation = 0;
+        GlobalsVariables.instance.oxygen = 100;
+        GlobalsVariables.instance.pressure = Random.Range(10000, 10020);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(0, 10);
+    }
+
+    void SpawnTsunami()
+    {
+        CurrentDisastersInt = 3;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+        GlobalsVariables.instance.temp = Random.Range(20, 31);
+        GlobalsVariables.instance.humidity = Random.Range(0, 20);
+        GlobalsVariables.instance.radiation = 0;
+        GlobalsVariables.instance.oxygen = 100;
+        GlobalsVariables.instance.pressure = Random.Range(10000, 10020);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(0, 10);
+    }
+
+    void SpawnMeteors()
+    {
+        CurrentDisastersInt = 4;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+        GlobalsVariables.instance.temp = Random.Range(20, 31);
+        GlobalsVariables.instance.humidity = Random.Range(0, 20);
+        GlobalsVariables.instance.radiation = 0;
+        GlobalsVariables.instance.oxygen = 100;
+        GlobalsVariables.instance.pressure = Random.Range(10000, 10020);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(0, 10);
+    }
+
+    void SpawnBlizzard()
+    {
+        CurrentDisastersInt = 5;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+        GlobalsVariables.instance.temp = Random.Range(-20, -35);
+        GlobalsVariables.instance.humidity = 0;
+        GlobalsVariables.instance.radiation = 100;
+        GlobalsVariables.instance.oxygen = Random.Range(8000, 9020);
+        GlobalsVariables.instance.pressure = Random.Range(5, 15);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(40, 50);
+    }
+    void SpawnSandStorm()
+    {
+        CurrentDisastersInt = 6;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+        GlobalsVariables.instance.temp = Random.Range(30, 35);
+        GlobalsVariables.instance.humidity = Random.Range(0, 5);
+        GlobalsVariables.instance.radiation = 0;
+        GlobalsVariables.instance.oxygen = 100;
+        GlobalsVariables.instance.pressure = Random.Range(10000, 10020);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(30, 50);
+    }
+    private void SpawnTornado()
+    {
+        CurrentDisastersInt = 1;
+        CurrentDisasters = ConvertNaturalDisastersIntToString(CurrentDisastersInt);
+        GlobalsVariables.instance.temp = Random.Range(5, 15);
+        GlobalsVariables.instance.humidity = Random.Range(30, 40);
+        GlobalsVariables.instance.radiation = 0;
+        GlobalsVariables.instance.oxygen = 100;
+        GlobalsVariables.instance.pressure = Random.Range(8000, 9000);
+        GlobalsVariables.instance.wind_direction = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        GlobalsVariables.instance.wind_speed = Random.Range(0, 30);
+    }
+
 
     public override void OnJoinedRoom()
     {
