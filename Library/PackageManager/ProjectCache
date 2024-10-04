@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638627660212106786
+      ticks: 638636251455383988
     m_Hash: 90233973
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -1688,6 +1688,7 @@ m_ResolvedPackages:
     - 3.0.0-pre.1
     - 3.0.1-pre.1
     - 4.0.0-pre.1
+    - 4.0.0
     compatible:
     - 1.0.0-pre.3
     - 1.0.0-pre.4
@@ -1698,7 +1699,8 @@ m_ResolvedPackages:
     - 3.0.0-pre.1
     - 3.0.1-pre.1
     - 4.0.0-pre.1
-    recommended: 4.0.0-pre.1
+    - 4.0.0
+    recommended: 4.0.0
     deprecated: []
   dependencies:
   - name: com.unity.services.core
@@ -5391,9 +5393,11 @@ m_ResolvedPackages:
     - 5.1.0
     - 5.1.1
     - 6.0.1
+    - 6.0.2
     compatible:
     - 6.0.1
-    recommended: 6.0.1
+    - 6.0.2
+    recommended: 6.0.2
     deprecated: []
   dependencies:
   - name: com.unity.ugui

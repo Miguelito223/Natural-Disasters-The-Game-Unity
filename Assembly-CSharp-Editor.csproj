@@ -1420,6 +1420,10 @@
       <Project>{8C5C2182-8467-BE80-E949-1D32742CB997}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{A65F28E1-8148-151C-3877-9FE4693B187E}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Netcode.Editor.PackageChecker.csproj">
       <Project>{C7DE0EAC-8755-552C-F83C-8C052517520D}</Project>
       <Name>Unity.Netcode.Editor.PackageChecker</Name>
@@ -1484,6 +1488,10 @@
       <Project>{65709B59-567E-D86D-A21F-1AE35947B2D4}</Project>
       <Name>UnityEngine.Purchasing.SecurityCore</Name>
     </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{7C53AA0B-6741-8D32-E265-219380E2C688}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj">
       <Project>{12FDDB1E-99FB-0286-09DE-B7BD8ACBEDA7}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection</Name>
@@ -1519,6 +1527,10 @@
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{8BA9B927-61EF-11AF-8ACF-4A6A1CAD372D}</Project>
       <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{ECE975C4-CADB-67C8-4DDE-D8DA512ADA86}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Networking.Transport.csproj">
       <Project>{CAFDDFEF-F176-60E0-641F-6AE66227D223}</Project>

@@ -2,17 +2,20 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp:
     - Hud
+    - InformationHud
     - Player
-    - PlayerName
     Assembly-CSharp.dll:
     - GlobalsVariables
     - Hause
     - Hud
+    - InformationHud
+    - LightPresent
     - MainMenu
     - Map
+    - MoonManager
     - Options
     - Player
-    - PlayerName
+    - SunManager
     PhotonUnityNetworking:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -30,6 +33,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonTransformViewClassic
     - Photon.Pun.PhotonView
@@ -132,6 +137,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.SceneManagement.Scene
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -215,6 +221,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -224,33 +232,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 17832}
+      Script: {instanceID: 30010}
     - Class: 114
-      Script: {instanceID: 30020}
+      Script: {instanceID: 31194}
     - Class: 114
-      Script: {instanceID: 31202}
+      Script: {instanceID: 31740}
     - Class: 114
-      Script: {instanceID: 32298}
+      Script: {instanceID: 32294}
     - Class: 114
-      Script: {instanceID: 32632}
+      Script: {instanceID: 32628}
     - Class: 114
       Script: {instanceID: 33936}
     - Class: 114
-      Script: {instanceID: 34570}
+      Script: {instanceID: 34572}
     - Class: 114
-      Script: {instanceID: 34656}
+      Script: {instanceID: 34712}
     - Class: 114
-      Script: {instanceID: 35140}
+      Script: {instanceID: 35008}
     - Class: 114
-      Script: {instanceID: 36180}
+      Script: {instanceID: 35146}
     - Class: 114
-      Script: {instanceID: 40048}
+      Script: {instanceID: 35888}
     - Class: 114
-      Script: {instanceID: 40710}
+      Script: {instanceID: 36188}
+    - Class: 114
+      Script: {instanceID: 40068}
     - Class: 114
       Script: {instanceID: 40732}
     - Class: 114
-      Script: {instanceID: 41000}
+      Script: {instanceID: 40754}
+    - Class: 114
+      Script: {instanceID: 41024}
+    - Class: 114
+      Script: {instanceID: 43114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -284,6 +298,10 @@ ScriptsOnlyBuild:
     - Class: 243
       Script: {instanceID: 0}
     - Class: 245
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
     Assets/Scenes/Menu.unity:
     - Class: 1
@@ -331,97 +349,97 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 17832}
+      Script: {instanceID: 30010}
     - Class: 114
-      Script: {instanceID: 30020}
+      Script: {instanceID: 30642}
     - Class: 114
-      Script: {instanceID: 30650}
+      Script: {instanceID: 31020}
     - Class: 114
-      Script: {instanceID: 31028}
+      Script: {instanceID: 31032}
     - Class: 114
-      Script: {instanceID: 31040}
+      Script: {instanceID: 31194}
     - Class: 114
-      Script: {instanceID: 31202}
+      Script: {instanceID: 31566}
     - Class: 114
-      Script: {instanceID: 31574}
+      Script: {instanceID: 31612}
     - Class: 114
-      Script: {instanceID: 31620}
+      Script: {instanceID: 31732}
     - Class: 114
-      Script: {instanceID: 31740}
+      Script: {instanceID: 31778}
     - Class: 114
-      Script: {instanceID: 31784}
+      Script: {instanceID: 31982}
     - Class: 114
-      Script: {instanceID: 31988}
+      Script: {instanceID: 32088}
     - Class: 114
-      Script: {instanceID: 32094}
+      Script: {instanceID: 32154}
     - Class: 114
-      Script: {instanceID: 32158}
+      Script: {instanceID: 32186}
     - Class: 114
-      Script: {instanceID: 32190}
+      Script: {instanceID: 32294}
     - Class: 114
-      Script: {instanceID: 32298}
+      Script: {instanceID: 32628}
     - Class: 114
-      Script: {instanceID: 32632}
+      Script: {instanceID: 33336}
     - Class: 114
-      Script: {instanceID: 33338}
+      Script: {instanceID: 33606}
     - Class: 114
-      Script: {instanceID: 33608}
+      Script: {instanceID: 34492}
     - Class: 114
-      Script: {instanceID: 34490}
+      Script: {instanceID: 34520}
     - Class: 114
-      Script: {instanceID: 34518}
-    - Class: 114
-      Script: {instanceID: 34570}
-    - Class: 114
-      Script: {instanceID: 34656}
+      Script: {instanceID: 34572}
     - Class: 114
       Script: {instanceID: 34692}
     - Class: 114
-      Script: {instanceID: 35140}
+      Script: {instanceID: 35008}
     - Class: 114
-      Script: {instanceID: 35336}
+      Script: {instanceID: 35146}
     - Class: 114
-      Script: {instanceID: 35640}
+      Script: {instanceID: 35342}
     - Class: 114
-      Script: {instanceID: 35866}
+      Script: {instanceID: 35646}
     - Class: 114
-      Script: {instanceID: 36074}
+      Script: {instanceID: 35872}
     - Class: 114
-      Script: {instanceID: 36180}
+      Script: {instanceID: 35888}
     - Class: 114
-      Script: {instanceID: 36970}
+      Script: {instanceID: 36082}
     - Class: 114
-      Script: {instanceID: 38374}
+      Script: {instanceID: 36188}
     - Class: 114
-      Script: {instanceID: 38454}
+      Script: {instanceID: 36978}
     - Class: 114
-      Script: {instanceID: 38494}
+      Script: {instanceID: 38386}
     - Class: 114
-      Script: {instanceID: 38824}
+      Script: {instanceID: 38466}
     - Class: 114
-      Script: {instanceID: 39316}
+      Script: {instanceID: 38506}
     - Class: 114
-      Script: {instanceID: 39348}
+      Script: {instanceID: 38838}
     - Class: 114
-      Script: {instanceID: 39420}
+      Script: {instanceID: 39332}
     - Class: 114
-      Script: {instanceID: 39852}
+      Script: {instanceID: 39364}
     - Class: 114
-      Script: {instanceID: 39888}
+      Script: {instanceID: 39436}
     - Class: 114
-      Script: {instanceID: 40048}
+      Script: {instanceID: 39872}
     - Class: 114
-      Script: {instanceID: 40186}
+      Script: {instanceID: 39908}
     - Class: 114
-      Script: {instanceID: 40618}
+      Script: {instanceID: 40068}
     - Class: 114
-      Script: {instanceID: 40710}
+      Script: {instanceID: 40208}
     - Class: 114
-      Script: {instanceID: 40874}
+      Script: {instanceID: 40640}
     - Class: 114
-      Script: {instanceID: 41000}
+      Script: {instanceID: 40732}
     - Class: 114
-      Script: {instanceID: 41106}
+      Script: {instanceID: 40898}
+    - Class: 114
+      Script: {instanceID: 41024}
+    - Class: 114
+      Script: {instanceID: 41130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -459,78 +477,6 @@ ScriptsOnlyBuild:
     - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 4a8aacee4a349c8b25f057dac5035648
-    assemblyName: PhotonUnityNetworking
-    namespaceName: Photon.Pun
-    className: PhotonHandler
-  - hash:
-      serializedVersion: 2
-      Hash: 1bd1d93080f8b066ac58cd7eace43253
-    assemblyName: PhotonUnityNetworking.Utilities
-    namespaceName: Photon.Pun.UtilityScripts
-    className: CullingHandler
-  - hash:
-      serializedVersion: 2
-      Hash: 39adf4b07c2f6364e30cbfc514879d5b
-    assemblyName: PhotonUnityNetworking.Utilities
-    namespaceName: Photon.Pun.UtilityScripts
-    className: EventSystemSpawner
-  - hash:
-      serializedVersion: 2
-      Hash: bd8b3194bebea9408f009de2a1b926bc
-    assemblyName: PhotonUnityNetworking.Utilities
-    namespaceName: Photon.Pun.UtilityScripts
-    className: PhotonTeamsManager
-  - hash:
-      serializedVersion: 2
-      Hash: 46734dde0a5a2061455766be7c7d214e
-    assemblyName: PhotonUnityNetworking.Utilities
-    namespaceName: Photon.Pun.UtilityScripts
-    className: OnJoinedInstantiate
-  - hash:
-      serializedVersion: 2
-      Hash: 758509c4e798663315c50f654daeec13
-    assemblyName: PhotonUnityNetworking.Demos
-    namespaceName: Photon.Pun.Demo.Asteroids
-    className: PlayerListEntry
-  - hash:
-      serializedVersion: 2
-      Hash: 636527112e2178c25dc6ccca10909b76
-    assemblyName: PhotonUnityNetworking.Demos
-    namespaceName: Photon.Pun.Demo.Hub
-    className: ToDemoHubButton
-  - hash:
-      serializedVersion: 2
-      Hash: 203b319722c18f871bf32b60c01bd4ce
-    assemblyName: PhotonUnityNetworking.Demos
-    namespaceName: Photon.Pun.Demo.Procedural
-    className: WorldGenerator
-  - hash:
-      serializedVersion: 2
-      Hash: 1dfda5298d660f881c93a54f702662a8
-    assemblyName: Assembly-CSharp
-    namespaceName: Photon.Chat.Demo
-    className: NamePickGui
-  - hash:
-      serializedVersion: 2
-      Hash: e525f24d6108df30c1fb4f52029577a2
-    assemblyName: Assembly-CSharp
-    namespaceName: Photon.Chat.UtilityScripts
-    className: EventSystemSpawner
-  - hash:
-      serializedVersion: 2
-      Hash: c5fe63befa7cf68627647e85730b7b71
-    assemblyName: Assembly-CSharp
-    namespaceName: Photon.Chat.Demo
-    className: ChannelSelector
-  - hash:
-      serializedVersion: 2
-      Hash: 41c6607192f19b8cf2e6ed9a25ea85b2
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Hud
   - hash:
       serializedVersion: 2
       Hash: 9d5e00857d1f11c83355447be6f95485
@@ -621,6 +567,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: Variables
+  - hash:
+      serializedVersion: 2
+      Hash: e525f24d6108df30c1fb4f52029577a2
+    assemblyName: Assembly-CSharp
+    namespaceName: Photon.Chat.UtilityScripts
+    className: EventSystemSpawner
   - hash:
       serializedVersion: 2
       Hash: 9ebc0a3016506a0cbb7e0306dfcb9497
@@ -935,6 +887,12 @@ ScriptsOnlyBuild:
     className: PlayerControl
   - hash:
       serializedVersion: 2
+      Hash: cdf524ddc2e93bc407605ddf6030dc74
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SunManager
+  - hash:
+      serializedVersion: 2
       Hash: 33656f83bb0079184b2206a69690ec46
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -993,6 +951,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos
     namespaceName: Photon.Pun.Demo.SlotRacer.Utils
     className: SplineWalker
+  - hash:
+      serializedVersion: 2
+      Hash: 4a8aacee4a349c8b25f057dac5035648
+    assemblyName: PhotonUnityNetworking
+    namespaceName: Photon.Pun
+    className: PhotonHandler
   - hash:
       serializedVersion: 2
       Hash: c77b8049ee2d49480abd1cf884014792
@@ -1191,6 +1155,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnToggleValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: bd8b3194bebea9408f009de2a1b926bc
+    assemblyName: PhotonUnityNetworking.Utilities
+    namespaceName: Photon.Pun.UtilityScripts
+    className: PhotonTeamsManager
   - hash:
       serializedVersion: 2
       Hash: a3901985eb076c1c9b7562fca82ca3e0
@@ -1397,7 +1367,7 @@ ScriptsOnlyBuild:
     className: PhotonLagSimulationGui
   - hash:
       serializedVersion: 2
-      Hash: ccb7cb572db403c1af6f61cb4ffc40e1
+      Hash: 11d6682cb63f921b790870a8dc50e12a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Map
@@ -1463,6 +1433,12 @@ ScriptsOnlyBuild:
     className: ToggleExpand
   - hash:
       serializedVersion: 2
+      Hash: 1dfda5298d660f881c93a54f702662a8
+    assemblyName: Assembly-CSharp
+    namespaceName: Photon.Chat.Demo
+    className: NamePickGui
+  - hash:
+      serializedVersion: 2
       Hash: 90522e88720d989c1a8bb1ce662f472c
     assemblyName: PhotonUnityNetworking.Demos
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1523,12 +1499,6 @@ ScriptsOnlyBuild:
     className: CodelessIAPButton
   - hash:
       serializedVersion: 2
-      Hash: 6df8613baa5baee2a832093e86a7e688
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PlayerName
-  - hash:
-      serializedVersion: 2
       Hash: 7053e305cdc1eb560f4c3be49d3b5136
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
@@ -1559,6 +1529,12 @@ ScriptsOnlyBuild:
     className: UnityOnEndDragMessageListener
   - hash:
       serializedVersion: 2
+      Hash: a9d90d210cd0db25b82116520f254261
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LightPresent
+  - hash:
+      serializedVersion: 2
       Hash: e81bf7d4290eb9291aa9e23e90b97774
     assemblyName: Unity.Cinemachine
     namespaceName: Unity.Cinemachine
@@ -1575,6 +1551,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 9cfab3d600219a7b795e39726754d880
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: InformationHud
+  - hash:
+      serializedVersion: 2
+      Hash: c5fe63befa7cf68627647e85730b7b71
+    assemblyName: Assembly-CSharp
+    namespaceName: Photon.Chat.Demo
+    className: ChannelSelector
   - hash:
       serializedVersion: 2
       Hash: 43ebd945b04bced376c791411cf5a289
@@ -1601,7 +1589,7 @@ ScriptsOnlyBuild:
     className: OnClickRpc
   - hash:
       serializedVersion: 2
-      Hash: 74173feabc8bed4a640106388e056681
+      Hash: bab2d18621d94d9a3e82d97fe1dc7057
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -1749,6 +1737,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos
     namespaceName: Photon.Pun.Demo.Asteroids
     className: Bullet
+  - hash:
+      serializedVersion: 2
+      Hash: fe0ddc1b7ee558be7f16fe8970b6f23d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Hud
   - hash:
       serializedVersion: 2
       Hash: 2d74b1fefb4705bd1e733657623e6fb3
@@ -2003,6 +1997,12 @@ ScriptsOnlyBuild:
     className: PunCockpit
   - hash:
       serializedVersion: 2
+      Hash: 46734dde0a5a2061455766be7c7d214e
+    assemblyName: PhotonUnityNetworking.Utilities
+    namespaceName: Photon.Pun.UtilityScripts
+    className: OnJoinedInstantiate
+  - hash:
+      serializedVersion: 2
       Hash: 7b6245756eca5c451b7c2fb6d398659f
     assemblyName: Assembly-CSharp
     namespaceName: Photon.Chat.Demo
@@ -2079,6 +2079,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 1bd1d93080f8b066ac58cd7eace43253
+    assemblyName: PhotonUnityNetworking.Utilities
+    namespaceName: Photon.Pun.UtilityScripts
+    className: CullingHandler
   - hash:
       serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
@@ -2189,7 +2195,7 @@ ScriptsOnlyBuild:
     className: DemoHubManager
   - hash:
       serializedVersion: 2
-      Hash: 42e340e81c4ba1064620d2fdb85c63a0
+      Hash: 26e1a0610dd34d45e97813fd94cb0573
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GlobalsVariables
@@ -2477,10 +2483,22 @@ ScriptsOnlyBuild:
     className: AnimatorMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 39adf4b07c2f6364e30cbfc514879d5b
+    assemblyName: PhotonUnityNetworking.Utilities
+    namespaceName: Photon.Pun.UtilityScripts
+    className: EventSystemSpawner
+  - hash:
+      serializedVersion: 2
       Hash: e5ced545fd8a42a1f50e04211216ab80
     assemblyName: Assembly-CSharp
     namespaceName: Photon.Realtime.Demo
     className: ConnectAndJoinRandomLb
+  - hash:
+      serializedVersion: 2
+      Hash: 758509c4e798663315c50f654daeec13
+    assemblyName: PhotonUnityNetworking.Demos
+    namespaceName: Photon.Pun.Demo.Asteroids
+    className: PlayerListEntry
   - hash:
       serializedVersion: 2
       Hash: b12640dfdb5966813e9dd838893e6c4a
@@ -2577,6 +2595,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos
     namespaceName: Photon.Pun.Demo.Cockpit.Forms
     className: CreateRoomUiForm
+  - hash:
+      serializedVersion: 2
+      Hash: 203b319722c18f871bf32b60c01bd4ce
+    assemblyName: PhotonUnityNetworking.Demos
+    namespaceName: Photon.Pun.Demo.Procedural
+    className: WorldGenerator
   - hash:
       serializedVersion: 2
       Hash: 00eef92bf387da2c9009267123d9d674
@@ -2705,6 +2729,12 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 636527112e2178c25dc6ccca10909b76
+    assemblyName: PhotonUnityNetworking.Demos
+    namespaceName: Photon.Pun.Demo.Hub
+    className: ToDemoHubButton
+  - hash:
+      serializedVersion: 2
       Hash: 429e659c846601e123ebde9292440c3d
     assemblyName: PhotonUnityNetworking
     namespaceName: Photon.Pun
@@ -2823,6 +2853,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
     className: SplineExtrude
+  - hash:
+      serializedVersion: 2
+      Hash: fddfcf47de14e003c3519a0bc4a7bbf2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MoonManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

@@ -1,11 +1,15 @@
 using Photon.Pun;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviourPunCallbacks
 {
     public CharacterController controller;
     public Animator animator;
     public Camera Camera;
+    public Scene mapscene;
+    public TMP_Text playername;
 
     public float speed = 2f;
     public float health = 100f;
@@ -48,8 +52,6 @@ public class Player : MonoBehaviourPunCallbacks
 
     public Material tempEffectMaterial;
 
-    private float nextUpdateTime = 0f;     // Tiempo de la siguiente actualización de temperatura
-
     public float RotationX;
     public Vector3 velocity;
     public float velocityY;
@@ -58,6 +60,12 @@ public class Player : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        if (GlobalsVariables.instance.IsNetworking)
+            if (!photonView.IsMine)
+                return;
+
+        GlobalsVariables.instance.LocalPlayer = this;
+
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         Camera = transform.Find("Camera").GetComponent<Camera>();
@@ -67,8 +75,10 @@ public class Player : MonoBehaviourPunCallbacks
 
     void Update()
     {
+        if (GlobalsVariables.instance.IsNetworking)
+            if (!photonView.IsMine)
+                return;
 
-        
         UpdateTemperature(Time.deltaTime);
         UpdateOxygen(Time.deltaTime);
         UpdateRadiation(Time.deltaTime);
@@ -78,6 +88,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     public bool IsPlayerAlive()
     {
+
         if (health <= 0)
             return false;
         else
@@ -86,8 +97,13 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Damage(string damagetype, float damageamount=5)
     {
+        if (GlobalsVariables.instance.IsNetworking)
+            if (!photonView.IsMine)
+                return;
+
         if (!IsPlayerAlive())
             return;
+
 
         if (damagetype == "heat")
         {
@@ -127,15 +143,25 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Death()
     {
+        if (GlobalsVariables.instance.IsNetworking)
+            if (!photonView.IsMine)
+                return;
+
         Debug.Log("Estas Muerto");
         transform.position = transform.parent.transform.Find("SpawnPoint").transform.position;
     }
 
+    [PunRPC]
+    public void SetNameText(string name)
+    {
+        playername.text = name;
+    }
 
     private void UpdateTemperature(float deltaTime)
     {
+
         // Cálculos de equilibrio térmico
-        float ambientTemperature = 0;
+        float ambientTemperature = GlobalsVariables.instance.temp;
         float coreEquilibrium = Mathf.Clamp((37f - body_temp) * bodyHeatGenK, -bodyHeatGenMAX, bodyHeatGenMAX);
         float heatSourceEquilibrium = Mathf.Clamp((fireHeatEmission * heatScale) * bodyHeatGenK, 0f, bodyHeatGenMAX * 1.3f);
         float coldSourceEquilibrium = Mathf.Clamp((fireHeatEmission * coolScale) * bodyHeatGenK, bodyHeatGenMAX * -1.3f, 0f);
@@ -191,18 +217,17 @@ public class Player : MonoBehaviourPunCallbacks
     // Función para simular vómito
     void Vomit()
     {
-        // Lógica para vómito
         Debug.Log("Player vomits due to overheating.");
     }
 
     // Función para simular estornudo
     void Sneeze()
     {
-        // Lógica para estornudo
         Debug.Log("Player sneezes due to cold.");
     }
     private void UpdateRadiation(float deltaTime)
     {
+
         float globalRadiation = GlobalsVariables.instance.radiation;
         
         if (globalRadiation >= radiationThreshold && GlobalsVariables.instance.IsOutdoor(gameObject))
@@ -226,6 +251,7 @@ public class Player : MonoBehaviourPunCallbacks
 
     private void UpdateOxygen(float deltaTime)
     {
+
         float oxygenLevel = GlobalsVariables.instance.oxygen;
         // Si el oxígeno en el ambiente es bajo o el jugador está en agua/lava, disminuir el oxígeno corporal
         if (oxygenLevel <= 20f || isunderwater || isunderlava)
@@ -241,7 +267,7 @@ public class Player : MonoBehaviourPunCallbacks
         // Si el oxígeno corporal se agota, causar daño al jugador
         if (body_oxy <= 0f)
         {
-            if (Random.Range(1, 26) == 25) // Probabilidad de daño
+            if (Random.Range(1, 25) == 25) // Probabilidad de daño
             {
                 Damage("drown", Random.Range(1, 31));
             }
@@ -250,13 +276,12 @@ public class Player : MonoBehaviourPunCallbacks
 
     void camera_control()
     {
+
         if (GlobalsVariables.instance.IsNetworking)
-        { 
             if (!photonView.IsMine)
-            {
                 return;
-            }
-        }
+            
+        
 
 
         float MouseY = Input.GetAxis("Mouse Y") * speed_camera;
@@ -273,12 +298,8 @@ public class Player : MonoBehaviourPunCallbacks
     void movement_control()
     {
         if (GlobalsVariables.instance.IsNetworking)
-        {
             if (!photonView.IsMine)
-            {
                 return;
-            }
-        }
 
         if (controller.isGrounded && velocity.y < 0)
         {

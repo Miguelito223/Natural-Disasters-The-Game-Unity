@@ -1,6 +1,7 @@
 using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalsVariables : MonoBehaviourPunCallbacks
 {
@@ -13,8 +14,16 @@ public class GlobalsVariables : MonoBehaviourPunCallbacks
     public float PlayersNumber = 0;
     public string LocalPlayerName = "Player";
 
-    //networking
+
+    //game
     public float points = 0;
+
+    //nodes
+    public Map map;
+    public Scene CurrentScene;
+    public SunManager SunDirLight;
+    public MoonManager MoonDirLight;
+    public Player LocalPlayer;
 
     //weather
     public float temp = 23;
@@ -262,8 +271,6 @@ public class GlobalsVariables : MonoBehaviourPunCallbacks
         {
             return false;
         }
-
-        // Add logic to check if the object is underwater
        
     }
 

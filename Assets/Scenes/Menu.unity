@@ -3695,6 +3695,11 @@ MonoBehaviour:
   PlayersNumber: 0
   LocalPlayerName: Player
   points: 0
+  map: {fileID: 0}
+  CurrentScene:
+    m_Handle: 0
+  DirLight: {fileID: 0}
+  LocalPlayer: {fileID: 6999493000577601413, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
   temp: 23
   humidity: 25
   wind_speed: 0
