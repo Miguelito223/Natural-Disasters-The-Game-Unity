@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.58673805, g: 0.58673805, b: 0.58673805, a: 1}
+  m_FogColor: {r: 0.61967576, g: 0.61967576, b: 0.61967576, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0.75391674, b: 0.93223214, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0.79501975, b: 0.97238415, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -42,7 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -144,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248937795}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04851599, y: 0.82758045, z: 0.5545399, w: 0.07240395}
+  m_LocalRotation: {x: -0.053957622, y: 0.7823286, z: 0.6167381, w: 0.06844493}
   m_LocalPosition: {x: 0, y: 0, z: 0.000040292733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -449,7 +450,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.9863904, b: 0.9551387, a: 1}
+  m_Color: {r: 1, g: 0.99506664, b: 0.9837382, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -512,7 +513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6107071658521479238}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04851599, y: 0.82758045, z: -0.5545399, w: 0.07240395}
+  m_LocalRotation: {x: 0.053957622, y: 0.7823286, z: -0.6167381, w: 0.06844493}
   m_LocalPosition: {x: 0, y: 0, z: 0.000040292733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -554,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SunDirLight: {fileID: 1663068587146227544}
   Present: {fileID: 11400000, guid: b447c974a9fb7d4459ec4be517fed639, type: 2}
-  hours: 10.51
+  hours: 11.1
   minutes: 60
   seconds: 60
   days: 0
@@ -601,6 +602,7 @@ MonoBehaviour:
   CurrentDisasters: sun
   CurrentDisastersInt: 0
   timer: 0
+  realistweather: 0
 --- !u!154 &5844820909231672088
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -730,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 2351547823650231991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14, z: 22.76}
+  m_LocalPosition: {x: 0, y: 2, z: 22.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

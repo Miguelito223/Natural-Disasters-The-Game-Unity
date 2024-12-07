@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AssetVersion: 1
   m_BuildTarget: 24
   m_Subtarget: 1
   m_PlatformId: 91d938b35f6f4798811e41f2acf9377f
   m_PlatformBuildProfile:
     rid: 8115398116348526597
+  m_OverrideGlobalSceneList: 0
   m_Scenes: []
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

@@ -9,15 +9,17 @@ public class Hud : MonoBehaviourPunCallbacks
     public RawImage Hearth;
     public AudioClip heartbeatClip;
     public AudioSource heartbeatSource;
+    
 
     private float lastHeartbeatTime;
     public float heartRateMin = 0.5f;    // Latido mínimo del corazón (frecuencia)
     public float heartRateMax = 20f;     // Latido máximo del corazón (frecuencia)
 
-    private RectTransform heartRectTransform;
+    
     public float scaleX = 1f;            // Escala en x
     public float scaleY = 1f;            // Escala en y
 
+    private RectTransform heartRectTransform;
     private float originalWidth;
     private float originalHeight;
     private float originalX;
@@ -27,11 +29,11 @@ public class Hud : MonoBehaviourPunCallbacks
 
     void Start()
     {
-
         if (GlobalsVariables.instance.IsNetworking)
             gameObject.SetActive(GlobalsVariables.instance.LocalPlayer.photonView.IsMine);
             if (!GlobalsVariables.instance.LocalPlayer.photonView.IsMine)
                 return;
+
 
         heartRectTransform = Hearth.GetComponent<RectTransform>();
         heartbeatSource.clip = heartbeatClip;
