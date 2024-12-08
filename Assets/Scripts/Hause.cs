@@ -1,4 +1,4 @@
-dusing UnityEngine;
+using UnityEngine;
 
 public class Hause : MonoBehaviour
 {
