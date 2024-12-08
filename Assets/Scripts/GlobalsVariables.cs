@@ -13,6 +13,9 @@ public class GlobalsVariables : MonoBehaviourPunCallbacks
     public List<GameObject> playerlist = new List<GameObject>();
     public float PlayersNumber = 0;
     public string LocalPlayerName = "Player";
+    
+    //weather realism
+    public bool realistweather = false;
 
 
     //game

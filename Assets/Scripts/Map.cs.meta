@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5686bd6bee1fafe4f8034965ff809bc0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PlayerScene: {fileID: 2362661031655115126, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
+  - PlayerScene2: {fileID: 4088770684247539980, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
+  - SpawnPosition: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

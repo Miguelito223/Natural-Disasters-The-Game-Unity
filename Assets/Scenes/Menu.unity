@@ -42,7 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -3694,11 +3695,13 @@ MonoBehaviour:
   playerlist: []
   PlayersNumber: 0
   LocalPlayerName: Player
+  realistweather: 1
   points: 0
   map: {fileID: 0}
   CurrentScene:
     m_Handle: 0
-  DirLight: {fileID: 0}
+  SunDirLight: {fileID: 0}
+  MoonDirLight: {fileID: 0}
   LocalPlayer: {fileID: 6999493000577601413, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
   temp: 23
   humidity: 25

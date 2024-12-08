@@ -11,8 +11,6 @@ public class InformationHud : MonoBehaviourPunCallbacks
     void Start()
     {
 
-       
-
         if (GlobalsVariables.instance.IsNetworking)
             gameObject.SetActive(GlobalsVariables.instance.LocalPlayer.photonView.IsMine);
             if (!GlobalsVariables.instance.LocalPlayer.photonView.IsMine)

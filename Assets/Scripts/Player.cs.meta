@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 92cfc53e51aed9841bc70293c174d7aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - controller: {fileID: 8345746895547255693, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
+  - animator: {fileID: 5841153403178705256, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
+  - Camera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

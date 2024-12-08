@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dd8039744fe7078498600d24bd672689
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - information: {instanceID: 0}
+  - Hearth: {instanceID: 0}
+  - player: {fileID: 6999493000577601413, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
+  - heartbeatClip: {fileID: 8300000, guid: 9ca004a8b5dbbb546987b4d34536b918, type: 3}
+  - heartbeatSource: {fileID: 2710231974778422253, guid: 6c3b869118bd51344bb8e43d6a263580, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
